@@ -1,37 +1,183 @@
 # PGMS – Personal Growth Management System
 
-This project follows a clean-architecture structure with four main layers:
+## Overview
 
-- Domain: entities and business rules in [app/entities](app/entities)
-- Use cases: application logic in [app/use_cases](app/use_cases)
-- Interface adapters: controllers, schemas, and repository contracts in [app/interface_adapters](app/interface_adapters)
-- Frameworks: FastAPI app, database, and persistence in [app/frameworks](app/frameworks)
+PGMS (Personal Growth Management System) is a Python application developed following the principles of Clean Architecture. The project aims to help users organize and monitor their personal development by managing goals, habits, daily tasks, and progress in a structured and maintainable way.
 
-## Structure
+The application separates business rules from external technologies, making the code easier to understand, maintain, test, and extend.
 
-- [app/entities](app/entities): domain models such as users, goals, habits, and tasks
-- [app/use_cases](app/use_cases): business workflows for each entity
-- [app/interface_adapters](app/interface_adapters): controller and schema layer
-- [app/frameworks](app/frameworks): API bootstrap and SQLAlchemy setup
-- [app/presentation](app/presentation): runnable CLI entrypoint for the application
-- [tests](tests): regression tests for startup and user use cases
+---
 
-## Run the app
+# Objectives
 
-From the project root:
+The main objective of PGMS is to provide a clean and scalable solution for personal productivity while demonstrating the implementation of Clean Architecture in Python.
 
-```bash
-python -m app.presentation.cli.main
+The project allows users to:
+
+- Create personal goals.
+- Track daily habits.
+- Manage tasks.
+- Monitor progress.
+- Organize personal development activities.
+
+---
+
+# Features
+
+- User Management
+- Goal Management
+- Habit Tracking
+- Task Management
+- Progress Monitoring
+- Data Validation
+- Modular Architecture
+- Unit Testing
+
+---
+
+# Clean Architecture
+
+The project follows Uncle Bob's Clean Architecture.
+
+```
+               Frameworks & Drivers
+                       │
+              Interface Adapters
+                       │
+                  Use Cases
+                       │
+                    Entities
 ```
 
-Or with Uvicorn directly:
+Each layer has a single responsibility and depends only on the inner layers.
 
-```bash
-uvicorn app.frameworks.main:app --host 0.0.0.0 --port 8000
+---
+
+# Project Structure
+
+```
+PGMS/
+│
+├── app/
+│   ├── domain/
+│   │   ├── entities/
+│   │   └── repositories/
+│   │
+│   ├── use_cases/
+│   │
+│   ├── interface_adapters/
+│   │   ├── controllers/
+│   │   ├── presenters/
+│   │   └── gateways/
+│   │
+│   ├── frameworks/
+│   │   ├── database/
+│   │   ├── cli/
+│   │   └── repositories/
+│   │
+│   └── main.py
+│
+├── tests/
+├── requirements.txt
+├── README.md
 ```
 
-## Run the tests
+---
+
+# Technologies
+
+- Python 3.11+
+- SQLite
+- Object-Oriented Programming (OOP)
+- Clean Architecture
+- SOLID Principles
+- unittest
+
+---
+
+# Installation
+
+Clone the repository
 
 ```bash
-pytest -q
+git clone https://github.com/your-username/PGMS.git
 ```
+
+Move into the project
+
+```bash
+cd PGMS
+```
+
+Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it
+
+macOS/Linux
+
+```bash
+source venv/bin/activate
+```
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application
+
+```bash
+python app/main.py
+```
+
+---
+
+# Architecture Benefits
+
+- Independent of frameworks
+- Easy to maintain
+- Easy to test
+- Highly scalable
+- Low coupling
+- High cohesion
+- Better code organization
+- Business logic independent from database and UI
+
+---
+
+# Testing
+
+Run all tests
+
+```bash
+python -m unittest discover tests
+```
+
+---
+
+# Future Improvements
+
+- Authentication
+- REST API
+- Web Interface
+- Mobile Application
+- Statistics Dashboard
+- Notifications
+- Cloud Database
+- ⁠
+# Author
+
+Chrisnelson Lys
+
+Computer Science Student
